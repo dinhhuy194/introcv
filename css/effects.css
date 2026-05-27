@@ -1,0 +1,80 @@
+@property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+@property --gradient-pos { syntax: '<percentage>'; initial-value: 0%; inherits: false; }
+
+.glow-border { position: relative; }
+.glow-border::before {
+  content: ''; position: absolute; inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--angle),
+    var(--accent-start), var(--accent-mid), var(--accent-end),
+    var(--color-cyan), var(--accent-start));
+  animation: spin-gradient 4s linear infinite;
+  z-index: -1;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  padding: 2px;
+}
+
+.glow-border-static { position: relative; overflow: hidden; }
+.glow-border-static::before {
+  content: ''; position: absolute; inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end), var(--color-cyan));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+}
+
+.shimmer-sweep {
+  position: relative; overflow: hidden;
+}
+.shimmer-sweep::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.08), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.noise-overlay {
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+.glass-glow { box-shadow: var(--shadow-medium), inset 0 1px 0 hsla(0, 0%, 100%, 0.1), var(--shadow-glow); }
+
+.text-shimmer {
+  background: linear-gradient(90deg, var(--text-primary) 0%, var(--accent-start) 50%, var(--text-primary) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: text-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes spin-gradient {
+  to { --angle: 360deg; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes text-shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
