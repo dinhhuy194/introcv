@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="John Doe — IT Student & Aspiring Software Engineer. Portfolio showcasing projects, skills, and experience.">
-  <meta property="og:title" content="John Doe — IT Student Portfolio">
+  <meta name="description" content="Phan Đình Huy — IT Student & Aspiring Software Engineer. Portfolio showcasing projects, skills, and experience.">
+  <meta property="og:title" content="Phan Đình Huy — IT Student Portfolio">
   <meta property="og:description" content="IT Student & Aspiring Software Engineer">
   <meta property="og:type" content="website">
-  <title>John Doe — IT Student Portfolio</title>
+  <title>Phan Đình Huy — IT Student Portfolio</title>
   <link rel="stylesheet" href="css/design-system.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
@@ -16,10 +16,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
-    .hero { position: relative; overflow: hidden; }
-    #auroraCanvas, #particleCanvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-    #particleCanvas { z-index: 1; }
-    #auroraCanvas { z-index: 0; }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      align-items: flex-start;
+      padding-top: clamp(88px, 14vh, 140px);
+    }
+    #auroraCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+    }
+    body { position: relative; }
+    #particleCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    main, .dots-nav { position: relative; z-index: 2; }
     .hero .container { position: relative; z-index: 2; }
     .hero-content { max-width: 800px; margin-inline: auto; text-align: center; }
     .stat-num { font-family: var(--font-display); font-weight: 800; }
@@ -30,6 +50,8 @@
 <body>
 
   <div class="noise-overlay"></div>
+  <canvas id="auroraCanvas"></canvas>
+  <canvas id="particleCanvas"></canvas>
 
   <nav class="dots-nav" aria-label="Section navigation">
     <a href="#hero" class="active" aria-label="Hero"></a>
@@ -43,14 +65,14 @@
 
   <main>
     <section class="hero" id="hero">
-      <canvas id="auroraCanvas"></canvas>
-      <canvas id="particleCanvas"></canvas>
       <div class="container hero-content">
         <div class="avatar-frame glow-border">
-          <div class="avatar-inner">JD</div>
+          <div class="avatar-inner">
+            <img class="avatar-image" src="assets/images/avatar.jpg" alt="Phan Đình Huy profile photo">
+          </div>
         </div>
         <p class="section-label" style="margin-top: var(--space-6);">Hello, I'm</p>
-        <h1><span class="gradient-text">John Doe</span></h1>
+        <h1><span class="gradient-text">Phan Đình Huy</span></h1>
         <p class="tagline" style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: var(--space-6); font-weight: 300;">IT Student &amp; Aspiring Software Engineer</p>
         <p style="max-width: 600px; margin-inline: auto; margin-bottom: var(--space-8);">
           Passionate about building elegant digital solutions. Currently pursuing my degree
@@ -341,7 +363,7 @@
 
   <footer style="text-align: center; padding: var(--space-8); border-top: 1px solid var(--glass-border);">
     <p style="font-size: 0.8rem; color: var(--text-tertiary);">
-      &copy; 2026 <span class="gradient-text">John Doe</span>. Crafted with passion.
+      &copy; 2026 <span class="gradient-text">Phan Đình Huy</span>. Crafted with passion.
     </p>
   </footer>
 

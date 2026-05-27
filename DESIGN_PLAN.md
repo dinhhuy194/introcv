@@ -465,7 +465,7 @@ Mono Font:      "JetBrains Mono"  → code snippets, tags
 │  └────┘ └────┘ └────┘ └────┘                │
 │  (Magnetic social icons with glow)           │
 │                                              │
-│  © 2026 John Doe · Crafted with ♥            │
+│  © 2026 Phan Đình Huy · Crafted with ♥       │
 └──────────────────────────────────────────────┘
 ```
 
@@ -841,7 +841,7 @@ d:\advanced web\th\ok\
 
 > Trả lời những câu hỏi này trước khi bắt đầu code:
 
-1. **Nội dung cá nhân**: Giữ nguyên "John Doe" hay thay bằng tên thật?
+1. **Nội dung cá nhân**: Giữ nguyên "Phan Đình Huy" hay thay bằng tên thật?
 2. **Avatar**: Có ảnh chân dung không, hay giữ avatar chữ cái?
 3. **Projects**: Có project thật nào muốn showcase? (tên, mô tả, link, screenshot)
 4. **Testimonials**: Có muốn thêm section testimonials không?
